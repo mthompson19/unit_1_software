@@ -3,7 +3,7 @@
 
 #### Course GitHub site: https://github.com/MSCI-758
 
-#### Unit 1 GitHub repository: https://github.com/MSCI-758/unit_1_getting_started
+#### Unit 1 GitHub repository: https://github.com/MSCI-758/unit_1_software
 
 Introductions to the major software that we will use in this class.
 
