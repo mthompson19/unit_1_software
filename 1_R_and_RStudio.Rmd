@@ -69,7 +69,7 @@ If you type a command that R doesn’t recognize, R will return an error message
 
 When you see an error message, don’t panic. R is just telling you that your computer couldn’t understand or do what you asked it to do. You can then try a different command at the next prompt. 
 
-Sometimes you'll run a command that takes FOREVER, and perhaps you realize that's because you asked R to do something you shouldn't have, or perhaps you just don't want to wait around for the command to finish because you are late for coffee with your BFF. With your cursor in the console pane, type `Escape` and R will stop running the command and give you the `>` prompt again. Sometimes it will take a minute for R to respond.
+Sometimes you'll run a command that takes FOREVER, and perhaps you realize that's because you asked R to do something you shouldn't have, or perhaps you just don't want to wait around for the command to finish because you are late for coffee with your BFF. With your cursor in the console pane, hit the `Escape` key and R will stop running the command and give you the `>` prompt again. Sometimes it will take a minute for R to respond.
 
 ### Creating an R script
 
@@ -78,7 +78,7 @@ When you need to write more than one or two lines of code, typing your commands 
 ![](doc/01-rstudio-script.png)
 
 
-Now the top left pane is your new R script, and the bottom left pane is the console. You can still type commands into the console whenever you would like to. However, you can also type your commands into the R script, and when you run the commands, the commands and output will be printed to the console. Try typing `print('Hello world')` as the first line in your R script. To run or "execute" your command, put your cursor anywhere on the line and hit `control + Enter` in Windows, `command + Enter` on a Mac or `control + Return` on a Linus machine. The cursor will automatically advance to the next line so that you can run your code line by line. If you highlight a section of code, the same run command will run all of the lines within the highlighted section. Alternatively, you can press the green arrow button in RStudio to execute your code, or click on `Run selected lines` under the `Code` drop-down menu. Now you can edit and save your code in the R script - that way you can look at it or re-run it later.
+Now the top left pane is your new R script, and the bottom left pane is the console. You can still type commands into the console whenever you would like to. However, you can also type your commands into the R script, and when you run the commands, the commands and output will be printed to the console. Try typing `print('Hello world')` as the first line in your R script. To run or "execute" your command, put your cursor anywhere on the line and hit `control + Enter` in Windows, `command + Enter` on a Mac or `control + Return` on a Linux machine. The cursor will automatically advance to the next line so that you can run your code line by line. If you highlight a section of code, the same run command will run all of the lines within the highlighted section. Alternatively, you can press the green arrow button in RStudio to execute your code, or click on `Run selected lines` under the `Code` drop-down menu. Now you can edit and save your code in the R script - that way you can look at it or re-run it later.
 
 #### Comments
 
@@ -197,7 +197,7 @@ c("fa", rep("la",4))
 We access elements of vectors using square bracket notation:
 
 ```{r}
-x <- 2:20
+x = 2:20
 x[1]      #returns the 1st element
 x[-1]     #returns everything except the first element
 x[2:4]
@@ -206,7 +206,7 @@ x[c(3, 5:10, 1)]
 
 ### Exercise 1.1
 
-Creat a vector of 5 numbers (any numbers will do). Multiply the vector by 2 and print out the results. Try adding 7 to the vector. Does this just add 7 to the first number in the vector or to every element of the vector? Make another vector with any 3 numbers and add this to your first vector, then save the results into a new variable. Are the results what you expected?
+Create a vector of 5 numbers (any numbers will do). Multiply the vector by 2 and print out the results. Try adding 7 to the vector. Does this just add 7 to the first number in the vector or to every element of the vector? Make another vector with any 3 numbers and add this to your first vector, then save the results into a new variable. Are the results what you expected?
 
 #### Matrix
 
@@ -241,7 +241,7 @@ class(my_array)  # the class or data structure is an "array"
 typeof(my_array) # the array is filled with data of the type "integer"
 ```
 
-Again, you use square brackets to access or subset elements in your multi-dimensional array. You should specify the element position(s) you want in every dimension of the array. So if you have a 3-D array, you will subset with code like this: `my_3d_array[row(s), column(s), sheet(s)]`. Technically, you can just subset with a single number and it will returns the $n^th$ element of the array first going through the rows then columns then sheets, but this is unnecessarily confusing. If you attempt to subset a 3-D array with 2 numbers, an error will be thrown. 
+Again, you use square brackets to access or subset elements in your multi-dimensional array. You should specify the element position(s) you want in every dimension of the array. So if you have a 3-D array, you will subset with code like this: `my_3d_array[row(s), column(s), sheet(s)]`. Technically, you can just subset with a single number and it will returns the $n^th$ element of the array first going through the columns, then rows, then sheets, but this is unnecessarily confusing. If you attempt to subset a 3-D array with 2 numbers, an error will be thrown. 
 
 ```{r}
 my_array[3,2,1] # Best practice
@@ -257,24 +257,24 @@ my_array[2,1]   # Error
 Lists are like atomic vectors because they group data into a one-dimensional set. However, lists do not group together individual values; lists group together R objects, such as atomic vectors and other lists. For example, you can make a list that contains a numeric vector of length 31 in its first element, a character vector of length 1 in its second element, and a new list of length 2 in its third element. You can use the `list()` function to create a list the same way `c()` creates a vector. Separate each element in the list with a comma:
 
 ```{r}
-list1 = list(95:103, "R", list(TRUE, FALSE))
-class(list1)
+my_list = list(95:103, "R", list(TRUE, FALSE))
+class(my_list)
 ```
 
 The double-bracketed indexes tell you which element of the list is being displayed. The single-bracket indexes tell you which subelement of an element is being displayed. For example, 97 is the first subelement of the first element in the list. "R" is the first sub-element of the second element. This two-system notation arises because each element of a list can be any R object, including a new vector (or list) with its own indexes.
 
 ```{r}
-list1[[1]][3]
-list1[[2]]
+my_list[[1]][3]
+my_list[[2]]
 ```
 
-Lists are a basic type of object in R, on par with atomic vectors. Like atomic vectors, they are used as building blocks to create many more spohisticated types of R objects. As you can imagine, the structure of lists can become quite complicated, but this flexibility makes lists a useful all-purpose storage tool in R: you can group together anything with a list.
+Lists are a basic type of object in R, on par with atomic vectors. Like atomic vectors, they are used as building blocks to create many more sophisticated types of R objects. As you can imagine, the structure of lists can become quite complicated, but this flexibility makes lists a useful all-purpose storage tool in R: you can group together anything with a list.
 
 #### Data Frame
 
 Data frames are the two-dimensional version of a list. They are far and away the most useful storage structure for data analysis. You can think of a data frame as R’s equivalent to the Excel spreadsheet because it stores data in a similar format. Data frames group vectors together into a two-dimensional table. Each vector becomes a column in the table. As a result, each column of a data frame can contain a different type of data; but within a column, every cell must be the same type of data.
 
-Creating a data frame by hand takes a lot of typing, but you can do it with the `data.frame` function. Give `data.frame` any number of vectors, each separated with a comma. Each vector should be set equal to a name that describes the vector. `data.frame` will turn each vector into a column of the new data frame. 
+Creating a data frame by hand takes a lot of typing, but you can do it with the `data.frame` function. Give `data.frame` any number of vectors, where each vector has the same number of elements. Each vector should be set equal to a name that describes the vector. `data.frame` will turn each vector into a column of the new data frame. 
 
 ```{r}
 world_oceans = data.frame(oceans = c("Atlantic", "Pacific", "Indian", "Arctic", "Southern"),
@@ -301,9 +301,9 @@ Much of the work in this class will be learning to use R to read and write data 
 
 #### A note on naming objects
 
-Objects can be given any name such as x, current_temperature, or fish_id. You want your object names to be explicit and not too long. They cannot start with a number (2x is not valid, but x2 is). R is case sensitive (e.g., earth is different from Earth). There are some names that cannot be used because they are they are reserved for fundamental functions in R (?Reserved lists these words). In general, even if it’s allowed, it’s best to not use other function names (e.g., c, T, mean, data, df, weights). If in doubt, check the help or use tab completion to see if the name is already in use.
+Objects can be given any name such as x, current_temperature, or fish_id. You want your object names to be explicit and not too long. They cannot start with a number (2x is not valid, but x2 is). R is case sensitive (e.g., earth is different from Earth). There are some names that cannot be used because they are reserved for fundamental functions in R (?Reserved lists these words). In general, even if it’s allowed, it’s best to not use other function names (e.g., c, T, mean, data, df, weights). If in doubt, check the help or use tab completion to see if the name is already in use.
 
-It’s also best to avoid dots (.) within a variable name as in my.dataset. Historically, there are many functions in R with dots in their name, but since dots have a special meaning in R, it’s better to not use them and instead use underscores (_).
+It’s also best to avoid periods (.) within a variable name as in my.dataset. Historically, there are many functions in R with periods in their name, but since periods have a special meaning in R, it’s better to not use them and instead use underscores (_).
 
 ### Exercise 1.2
 
@@ -311,7 +311,7 @@ Use the `world_oceans` data frame that we have built and add a new column for oc
 
 ### Functions
 
-R comes with many functions that you can use to do simple or sophisticated tasks. You've already used a few functions, such as `print()`, `c()` and `data.frame()`. Functions make your life easier by taking a lot of code and condensing it into a single line of code. For example, you can round a number with the `round()` function, or calculate the mean of a vector with the `mean()` function. To use a function, write the name of the function and then provide the data you want the function to operate on in parentheses. The data that you pass into the function is called the function’s *parameters* or *arguments*. The parameters can be raw data, an R object, or even the results of another R function. In this last case, R will work from the innermost function to the outermost fucntion, similar to the mathematical order of operations. 
+R comes with many functions that you can use to do simple or sophisticated tasks. You've already used a few functions, such as `print()`, `c()` and `data.frame()`. Functions make your life easier by taking a lot of code and condensing it into a single line of code. For example, you can round a number with the `round()` function, or calculate the mean of a vector with the `mean()` function. To use a function, write the name of the function and then provide the data you want the function to operate on in parentheses. The data that you pass into the function is called the function’s *parameters* or *arguments*. The parameters can be raw data, an R object, or even the results of another R function. In this last case, R will work from the innermost function to the outermost function, similar to the mathematical order of operations. 
 
 ```{r}
 round(9.3452)
@@ -319,7 +319,7 @@ mean(world_oceans$area_km2)
 round(mean(c(9.3452, 6.234, 11.983)))
 ```
 
-Don't forget that you can easily learn about what a function does, what values it returns, and what parameters you can (or must) pass the function by using the `?` to access RStudio's Help feature, i.e. `?mean`. There are two types of parameters that you can pass to a function: required parameters and optional parameters. For a function to work properly (and not throw an error code) you must pass it all of the required parameters. However, often there are many optional parameters that you can pass a function if you choose. By including optional parameters, you typically override the default settings for those parameters to utilize more flexibility built into the function.
+Don't forget that you can easily learn about what a function does, what values it returns, and what parameters you can (or must) pass the function by using the `?` to access RStudio's Help feature, i.e. `?round`. There are two types of parameters that you can pass to a function: required parameters and optional parameters. For a function to work properly (and not throw an error code) you must pass it all of the required parameters. However, often there are many optional parameters that you can pass a function if you choose. By including optional parameters, you typically override the default settings for those parameters to utilize more flexibility built into the function.
 
 In this course you will also learn how to create your own functions (often called user-defined functions). This is a good idea when you have to perform the same series of operations over and over. Writing and then calling your own function will be faster, less prone to errors, easier to change when needed, and more portable to other research projects.
 
@@ -329,13 +329,13 @@ Look at the R Documentation for the `signif()` function by typing `?signif` into
 
 ### Packages
 
-You’re not the only person writing your own functions with R. Many professors, programmers, and statisticians use R to design tools that can help people analyze data. They then make these tools free for anyone to use. To use these tools, you just have to download them. They come as preassembled collections of functions and objects called packages. Most R packages are hosted at http://cran.r-project.org, the same website that hosts R. However, you don’t need to visit the website to download an R package; you can download packages straight from R’s command line. Here’s how:
+You’re not the only person writing your own functions with R. Many scientists, programmers, and statisticians use R to design tools that can help people analyze data. They then make these tools free for anyone to use. To use these tools, you just have to download them. They come as preassembled collections of functions and objects called packages. Most R packages are hosted at http://cran.r-project.org, the same website that hosts R. However, you don’t need to visit the website to download an R package; you can download packages straight from R’s command line. Here’s how:
 
 * Open RStudio.
 * Make sure you are connected to the Internet.
 * Run install.packages("name_of_package") at the command line.
 
-That’s it. R will have your computer visit the website, download ggplot2, and install the package in your hard drive right where R looks for it. Alternatively, you can use the `Tools` menu at the top of RStudio and click `Install Packages`. We'll be using plenty of packages in this class, with special emphasis on the suite of packages in the `tidyverse` and `ggplot`. Once you have a package installed on your computer, you'll need to load it at the top of your script with the `library()` function. For example:
+That’s it. R will have your computer visit the website, download ggplot2, and install the package in your hard drive right where R looks for it. Alternatively, you can use the `Tools` menu at the top of RStudio and click `Install Packages`. We'll be using plenty of packages in this class, with special emphasis on the suite of packages in the `tidyverse` such as `ggplot2`. Once you have a package installed on your computer, you'll need to load it at the top of your script with the `library()` function. For example:
 
 ``` {r, eval=FALSE}
 install.packages('ggplot2')  # Only need to do this one time on a computer
@@ -346,7 +346,7 @@ Now you have the suite of functions in the ggplot2 package loaded up and ready t
 
 ### Object-oriented programming
 
-R is an object oriented programming language. The theory and implementation behind object oriented programming is vast and deep and well beyond the scope of this class. However, what this means for you, the beginner data scientist, is that the same 'generic' function will behave completely differently depending on what kind of object has been passed to it. Usually, this is a very good thing that reduces your work load and reduces the number of functions you need to use and remember. As a simple example, the function `summary()` is a generic function that we will use often in this class to learn about the contents of an object. The value returned by the function `summary()` changes depending on what `class` of oject you pass in the parameters. The function `summary()` was designed this way so that the output would be most useful for each class of object you might want to summarize. Check out the `help` feature to learn more about how this generic function behaves differently depending on the class of variable that it is given:
+R is an object oriented programming language. The theory and implementation behind object oriented programming is vast and deep and well beyond the scope of this class. However, what this means for you, the beginner data scientist, is that the same 'generic' function will behave completely differently depending on what kind of object has been passed to it. Usually, this is a very good thing that reduces your work load and reduces the number of functions you need to use and remember. As a simple example, the function `summary()` is a generic function that we will use often in this class to learn about the contents of an object. The value returned by the function `summary()` changes depending on what `class` of object you pass in the parameters. The function `summary()` was designed this way so that the output would be most useful for each class of object you might want to summarize. Check out the `help` feature to learn more about how this generic function behaves differently depending on the class of variable that it is given:
 
 ```{r}
 ?summary 
@@ -421,11 +421,11 @@ Inf + 2
 Inf / Inf
 ```
 
-Another special value in R is `NULL`. It's similar to `NA`, but instead of acting as a place holder for a missing value, `NULL` is used mainly to represent lists with zero length. `NULL` is often returned by expressions and functions whose value is undefined. 
+Another special value in R is `NULL`. It's similar to `NA`, but instead of acting as a place holder for a missing value, `NULL` is used mainly to represent lists with zero length. 
 
 ### Additional Resources
 
-There is a great (free!) beginniner's guide to programming in R:
+There is a great (free!) beginner's guide to programming in R:
 “Hands-On Programming with R” by Garrett Grolemund
 https://rstudio-education.github.io/hopr/
 
