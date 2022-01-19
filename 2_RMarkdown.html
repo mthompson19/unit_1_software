@@ -176,7 +176,7 @@ pre code {
 </div>
 <div id="what-is-rmarkdown" class="section level3">
 <h3>What is RMarkdown?</h3>
-<p>R Markdown allows you to create documents that serve as an organized record of your analysis. In the world of reproducible research, we want other researchers to easily understand what we did in our analysis, otherwise nobody can be certain that you analysed your data properly. You might choose to create an RMarkdown document as an appendix to a paper or project assignment that you are doing, upload it to an online repository such as Github, or simply to keep as a personal record so you can quickly look back at your code and see what you did. RMarkdown presents your code alongside its output (graphs, tables, etc.) with conventional text to explain it, a bit like a notebook.</p>
+<p>R Markdown allows you to create documents that serve as an organized record of your analysis. In the world of reproducible research, we want other researchers to easily understand what we did in our analysis, and potentially validate or extend this work. You might choose to create an RMarkdown document as an appendix to a paper or project assignment that you are doing, upload it to an online repository such as Github, or simply to keep as a personal record so you can quickly look back at your code and see what you did. RMarkdown presents your code alongside its output (graphs, tables, etc.) with conventional text to explain it, a bit like a notebook.</p>
 <p>RMarkdown uses Markdown syntax. Markdown is a very simple ‘markup’ language which provides methods for creating documents with headers, images, links etc. from plain text files, while keeping the original plain text file easy to read. You can convert Markdown documents to many other file types like .html or .pdf to display the headers, images etc..</p>
 </div>
 <div id="download-rmarkdown" class="section level3">
@@ -357,7 +357,13 @@ My pet&#39;s in order of how much I like them:
 </tr>
 </tbody>
 </table>
-<p>There is one other way to embed R code into an R Markdown document: directly into the text, with just a single grave accent ` surrounding the inline code. This can be very useful if you mention properties of your data in the text. When the report is knit, the results of these computations are inserted directly into the text.</p>
+</div>
+<div id="inline-code" class="section level3">
+<h3>Inline code</h3>
+<p>It’s customary to refer to code directly inline using single grave accents so that the reader knows you are referring to a variable, command, etc. Then you can embed R code directly into the text, using single grave accents surrounding the letter <code>r</code> and the inline code. This can be very useful if you mention properties of your data in the text. When the report is knit, the results of these computations are inserted directly into the text.</p>
+<p>For example:</p>
+<pre class="r"><code>teeth_lost_per_kid = c(16, 1, 0)</code></pre>
+<p>Our important data is stored in the variable <code>teeth_lost_per_kid</code> and I can use that data to calculate the total number of times I’ve played tooth fairy, which is: 17. Hooray!</p>
 </div>
 <div id="text-formatting-with-markdown" class="section level3">
 <h3>Text formatting with Markdown</h3>

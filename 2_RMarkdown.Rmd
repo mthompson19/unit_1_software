@@ -13,7 +13,7 @@ knitr::opts_chunk$set(fig.width=6, fig.asp = 0.618, collapse=TRUE)
 
 ### What is RMarkdown?
 
-R Markdown allows you to create documents that serve as an organized record of your analysis. In the world of reproducible research, we want other researchers to easily understand what we did in our analysis, otherwise nobody can be certain that you analysed your data properly. You might choose to create an RMarkdown document as an appendix to a paper or project assignment that you are doing, upload it to an online repository such as Github, or simply to keep as a personal record so you can quickly look back at your code and see what you did. RMarkdown presents your code alongside its output (graphs, tables, etc.) with conventional text to explain it, a bit like a notebook.
+R Markdown allows you to create documents that serve as an organized record of your analysis. In the world of reproducible research, we want other researchers to easily understand what we did in our analysis, and potentially validate or extend this work. You might choose to create an RMarkdown document as an appendix to a paper or project assignment that you are doing, upload it to an online repository such as Github, or simply to keep as a personal record so you can quickly look back at your code and see what you did. RMarkdown presents your code alongside its output (graphs, tables, etc.) with conventional text to explain it, a bit like a notebook.
 
 RMarkdown uses Markdown syntax. Markdown is a very simple ‘markup’ language which provides methods for creating documents with headers, images, links etc. from plain text files, while keeping the original plain text file easy to read. You can convert Markdown documents to many other file types like .html or .pdf to display the headers, images etc..
 
@@ -121,7 +121,18 @@ Option             | Run code | Show code | Output | Plots | Messages | Warnings
 `warning = FALSE`  |          |           |        |       |          | -
 
 
-There is one other way to embed R code into an R Markdown document: directly into the text, with just a single grave accent ` surrounding the inline code. This can be very useful if you mention properties of your data in the text. When the report is knit, the results of these computations are inserted directly into the text.
+### Inline code
+
+It's customary to refer to code directly inline using single grave accents so that the reader knows you are referring to a variable, command, etc. Then you can embed R code directly into the text, using single grave accents surrounding the letter `r` and the inline code. This can be very useful if you mention properties of your data in the text. When the report is knit, the results of these computations are inserted directly into the text.
+
+For example:
+
+```{r}
+teeth_lost_per_kid = c(16, 1, 0)
+```
+
+Our important data is stored in the variable `teeth_lost_per_kid` and I can use that data to calculate the total number of times I've played tooth fairy, which is: `r sum(teeth_lost_per_kid)`. Hooray!
+
 
 ### Text formatting with Markdown
 
