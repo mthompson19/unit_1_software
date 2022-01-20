@@ -46,3 +46,11 @@ My pet's in order of how much I like them:
 1. Nana (dog)
 2. Wheezer (cat)
 3. Napoleon (jerkface)
+
+***
+
+I can italicize text like *this* or like _this_ and I can embolden text like **this** or like __this__
+
+***
+
+superscript^2^ and subscript~2~
