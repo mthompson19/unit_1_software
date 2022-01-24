@@ -100,6 +100,29 @@ $ git config --list
 
 If you don't like your settings and want to change them, you can just repeat the commands above to update your email or your user name.
 
+
+### Generate a Personal Access Token
+
+To work between your hard drive and your online GitHub account, you will need to generate a Personal Access Token. This is like a password, but long and random, and therefore more secure. To generate a Personal Access Token, follow the directions here:
+
+<https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token>
+
+In short: 
+
+- Go to your GitHub profile page.
+- Click your profile photo in the upper-right corner of the page and click `Settings`. 
+- In the left side bar, click `Developer Settings`. 
+- In the left sidebar, click `Personal access tokens`. 
+- Click `generate a personal access token`. 
+- Add a note. This can be anything, but I write something like `PAT-2022-01-23`
+- Set the Expiration period for this personal access token. Once the expiration period has ended, you'll have to go through these steps to generate a new personal access token.
+- Select the scopes of permission for this personal access token. At least choose `repo` for this class.
+- Click `Generate Token`
+- Copy the personal access token that has been generated. You can email this to yourself, save it in a Word file on your computer, or put it anywhere that will be handy for your workflow. You will need to copy and paste this in the future to move your files onto GitHub!
+- Note that on your personal access token page on GitHub, you can revoke all tokens that you have generated if you are concerned that someone has gained access to your account.
+
+***
+
 ### The basics of version control with Git
 
 #### What is a repository?
@@ -204,7 +227,7 @@ Once you click `Commit`, you will see a message saying that your branch is now o
 
 We can't repeat it enough: **always `Pull` before you `Push`.** `Pull` means that you are retrieving the most recent version of the Github repository onto your local branch - this command is especially useful if several people are working within the same repository - imagine there was another version of your R script because your collaborator was working on it the same time as you - you wouldn't want to "overwrite" their work and cause trouble. In this case, you are the only one working on these files, but it's still good to develop the practice of pulling before you push.
 
-`Pull` the latest updates from the master branch on GitHub by clicking on the green downward-pointing arrow next to the `Commit` button in the `Git` pane in RStudio. A pop-up window will tell you that you are already up to date. Now you can `Push` the changes on your local computer out to your online GitHub account by clicking the green upward-pointing arrow in the `Git` pane in RStudio. Wait for the loading to be over and then click on `Close` - that was it, you have successfully pushed your work to Github!
+`Pull` the latest updates from the master branch on GitHub by clicking on the green downward-pointing arrow next to the `Commit` button in the `Git` pane in RStudio. A pop-up window will tell you that you are already up to date. Now you can `Push` the changes on your local computer out to your online GitHub account by clicking the green upward-pointing arrow in the `Git` pane in RStudio. When you click `Push`, you may be prompted to enter your GitHub profile name, then to enter in the personal access token that you have generated for your GitHub account. Copy this from wherever you have saved it and paste it into the pop-up window.  Wait for the loading to be over and then click on `Close` - that was it, you have successfully pushed your work to Github!
 
 Go back to your repository on Github, where you can now see all of your updated files online. Click on your README file on GitHub and then on `History` - this is where you can see the different versions of your script - obviously in real life situations you will make many changes as your work progresses - here we just have two. Thanks to Github and version control, you don't need to save hundreds of almost identical files (e.g. `Dissertation_script_25thFeb.R`, `Dissertation_script_26thFeb.R`) - you have one file and by clicking on the different commits, you can see what it looked like at different points in time.
 
@@ -274,7 +297,7 @@ Cloud storage and version control!
 
 ## Course Workflow
 
-Now that you are set up with GitHub and you have found our class GitHub repository: https://github.com/MSCI-599 you can follow the class coding tutorials very easily. Whenever we start a new unit, y**ou should fork the associated unit repo to your own GitHub profile and Clone it onto your local computer.** From there you have access to all of the files we use in the tutorial: data, scripts, figures, readings etc. During class, create your own `.R` or `.Rmd` file and type the code along with me, but save the file with your initials at the end of the file name. That way you know that it's the versions that YOU created while you were following along with the course. You can take your own notes / comments directly in your `.R` or `.Rmd` files and reference them later. You'll also have the original tutorials that I created for you to reference as well. Commit and push your changes back into your repo as you go.
+Now that you are set up with GitHub and you have found our class GitHub repository: https://github.com/MSCI-758 you can follow the class coding tutorials very easily. Whenever we start a new unit, **you should fork the associated unit repo to your own GitHub profile and Clone it onto your local computer.** From there you have access to all of the files we use in the tutorial: data, scripts, figures, readings etc. During class, create your own `.R` or `.Rmd` file and type the code along with me, but save the file with your initials at the end of the file name. That way you know that it's the versions that YOU created while you were following along with the course. You can take your own notes / comments directly in your `.R` or `.Rmd` files and reference them later. You'll also have the original tutorials that I created for you to reference as well. Commit and push your changes back into your repo as you go.
 
 When you are working, open up the `.Rmd` file associated with the lesson tutorial that we are working through that day. Also open a new `.Rmd` or `.R` file in the RStudio Project linked to that unit's repo on your computer to type the code we are writing along with the tutorial. You can toggle between the RStudio script that you are writing in RStudio and the typed-up tutorial that you knitted from the `.Rmd` file I created.
 
