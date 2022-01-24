@@ -18,7 +18,7 @@ Version control allows you to keep track of your work and helps you to easily ex
 
 Git has a tremendous amount of uses, and you can use the command line to perform advanced actions. However, in this class we will just be using Git's more basic functions. This is a gentle introduction to syncing RStudio and Github, so you can start using version control in minutes.
 
-![](doc/phd101212s_version_control.gif){width=40%}
+![](doc/phd101212s_version_control.png){width=40%}
 
 ### What are the benefits of using version control?
 
