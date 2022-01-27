@@ -1,0 +1,27 @@
+---
+title: "Homework 1 MSCI 758 Software Practice"
+author: "Madeleine Thompson"
+date: "1/25/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.width=6, fig.asp = 0.618, collapse=TRUE) 
+```
+
+### Homework # 1 Software Practice
+
+This data set is my top 10 favorite tv shows, number of episodes, and the genre. I love movies and tv, and it is what i do in my free time. I thought i would share a little bit of the shows I like to watch! 
+
+
+```{r}
+tv <- read.csv("Best tv shows.csv")
+print(tv)
+summary(tv)
+mean(tv$number.of.episodes)
+```
+
+
+
+
+
